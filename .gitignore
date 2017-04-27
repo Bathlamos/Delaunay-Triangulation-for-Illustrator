@@ -4,6 +4,10 @@
 *.obj
 *.elf
 
+## Various settings
+*.pbxuser
+xcuserdata/
+
 # Precompiled Headers
 *.gch
 *.pch

@@ -1,0 +1,351 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F8A8EB71EB1903E00053861 /* HelloWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EB61EB1903E00053861 /* HelloWorld.cpp */; };
+		1F8A8EB91EB1905F00053861 /* IAIUnicodeString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EB81EB1905F00053861 /* IAIUnicodeString.cpp */; };
+		1F8A8EBC1EB191C900053861 /* HelloWorld.r in Rez */ = {isa = PBXBuildFile; fileRef = 1F8A8EBA1EB1907900053861 /* HelloWorld.r */; };
+		1F8A8EBF1EB192A700053861 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A8EBE1EB192A700053861 /* CoreFoundation.framework */; };
+		1F8A8ECC1EB1ABEB00053861 /* png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A8ECA1EB1ABEB00053861 /* png */; };
+		1F8A8ECD1EB1ABEB00053861 /* txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A8ECB1EB1ABEB00053861 /* txt */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1F8A8EAF1EB18FFA00053861 /* delaunay-for-ai.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "delaunay-for-ai.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F8A8EB21EB18FFA00053861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F8A8EB61EB1903E00053861 /* HelloWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorld.cpp; path = Sources/HelloWorld.cpp; sourceTree = "<group>"; };
+		1F8A8EB81EB1905F00053861 /* IAIUnicodeString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IAIUnicodeString.cpp; path = ../../illustratorapi/illustrator/IAIUnicodeString.cpp; sourceTree = "<group>"; };
+		1F8A8EBA1EB1907900053861 /* HelloWorld.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = HelloWorld.r; sourceTree = "<group>"; };
+		1F8A8EBE1EB192A700053861 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		1F8A8ECA1EB1ABEB00053861 /* png */ = {isa = PBXFileReference; lastKnownFileType = folder; name = png; path = Resources/png; sourceTree = "<group>"; };
+		1F8A8ECB1EB1ABEB00053861 /* txt */ = {isa = PBXFileReference; lastKnownFileType = folder; name = txt; path = Resources/txt; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F8A8EAC1EB18FFA00053861 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A8EBF1EB192A700053861 /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1F8A8EA21EB18F9E00053861 = {
+			isa = PBXGroup;
+			children = (
+				1F8A8EAA1EB18FA800053861 /* Resources */,
+				1F8A8EA91EB18FA500053861 /* Source */,
+				1F8A8EB11EB18FFA00053861 /* delaunay-for-ai */,
+				1F8A8EB01EB18FFA00053861 /* Products */,
+				1F8A8EBD1EB192A600053861 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1F8A8EA91EB18FA500053861 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A8EB81EB1905F00053861 /* IAIUnicodeString.cpp */,
+				1F8A8EB61EB1903E00053861 /* HelloWorld.cpp */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1F8A8EAA1EB18FA800053861 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A8ECA1EB1ABEB00053861 /* png */,
+				1F8A8ECB1EB1ABEB00053861 /* txt */,
+				1F8A8EBA1EB1907900053861 /* HelloWorld.r */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1F8A8EB01EB18FFA00053861 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A8EAF1EB18FFA00053861 /* delaunay-for-ai.bundle */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F8A8EB11EB18FFA00053861 /* delaunay-for-ai */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A8EB21EB18FFA00053861 /* Info.plist */,
+			);
+			path = "delaunay-for-ai";
+			sourceTree = "<group>";
+		};
+		1F8A8EBD1EB192A600053861 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A8EBE1EB192A700053861 /* CoreFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F8A8EAE1EB18FFA00053861 /* delaunay-for-ai */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F8A8EB31EB18FFA00053861 /* Build configuration list for PBXNativeTarget "delaunay-for-ai" */;
+			buildPhases = (
+				1F8A8EAB1EB18FFA00053861 /* Sources */,
+				1F8A8EAC1EB18FFA00053861 /* Frameworks */,
+				1F8A8EAD1EB18FFA00053861 /* Resources */,
+				1F8A8EBB1EB191BF00053861 /* Rez */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "delaunay-for-ai";
+			productName = "delaunay-for-ai";
+			productReference = 1F8A8EAF1EB18FFA00053861 /* delaunay-for-ai.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F8A8EA31EB18F9E00053861 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				TargetAttributes = {
+					1F8A8EAE1EB18FFA00053861 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 1F8A8EA61EB18F9E00053861 /* Build configuration list for PBXProject "Delaunay Triangulation for Illustrator" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 1F8A8EA21EB18F9E00053861;
+			productRefGroup = 1F8A8EB01EB18FFA00053861 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F8A8EAE1EB18FFA00053861 /* delaunay-for-ai */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F8A8EAD1EB18FFA00053861 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A8ECC1EB1ABEB00053861 /* png in Resources */,
+				1F8A8ECD1EB1ABEB00053861 /* txt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXRezBuildPhase section */
+		1F8A8EBB1EB191BF00053861 /* Rez */ = {
+			isa = PBXRezBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A8EBC1EB191C900053861 /* HelloWorld.r in Rez */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXRezBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F8A8EAB1EB18FFA00053861 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F8A8EB91EB1905F00053861 /* IAIUnicodeString.cpp in Sources */,
+				1F8A8EB71EB1903E00053861 /* HelloWorld.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1F8A8EA71EB18F9E00053861 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AI_CONFIGURATION = debug;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CONFIGURATION_BUILD_DIR = "./../output/mac/$(AI_CONFIGURATION)";
+				GCC_PREFIX_HEADER = ./../common/includes/IllustratorSDKdebug.pch;
+				GENERATE_PKGINFO_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../common/**\n../../illustratorapi/**\n/Developers/Headers/FlatCocoa/**/**",
+					"../../illustratorapi/**",
+					"/Developers/Headers/FlatCocoa/**",
+				);
+				INFOPLIST_FILE = " ../common/mac/Info.plist";
+				INFOPLIST_PREFIX_HEADER = ../common/includes/SDKDef.h;
+				INFOPLIST_PREPROCESS = YES;
+				OBJROOT = .;
+				SYMROOT = "./../output/mac/$(AI_CONFIGURATION)";
+				WRAPPER_EXTENSION = aip;
+			};
+			name = Debug;
+		};
+		1F8A8EA81EB18F9E00053861 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				AI_CONFIGURATION = release;
+				ARCHS = "$(ARCHS_STANDARD)";
+				CONFIGURATION_BUILD_DIR = "./../output/mac/$(AI_CONFIGURATION)";
+				GCC_PREFIX_HEADER = ./../common/includes/IllustratorSDKrelease.pch;
+				GENERATE_PKGINFO_FILE = YES;
+				HEADER_SEARCH_PATHS = (
+					"../common/**\n../../illustratorapi/**\n/Developers/Headers/FlatCocoa/**/**",
+					"../../illustratorapi/**",
+					"/Developers/Headers/FlatCocoa/**",
+				);
+				INFOPLIST_FILE = " ../common/mac/Info.plist";
+				INFOPLIST_PREFIX_HEADER = ../common/includes/SDKDef.h;
+				INFOPLIST_PREPROCESS = YES;
+				OBJROOT = .;
+				SYMROOT = "./../output/mac/$(AI_CONFIGURATION)";
+				WRAPPER_EXTENSION = aip;
+			};
+			name = Release;
+		};
+		1F8A8EB41EB18FFA00053861 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "delaunay-for-ai/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.legault.delaunay-for-ai";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		1F8A8EB51EB18FFA00053861 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_FILE = "delaunay-for-ai/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "cc.legault.delaunay-for-ai";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F8A8EA61EB18F9E00053861 /* Build configuration list for PBXProject "Delaunay Triangulation for Illustrator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8A8EA71EB18F9E00053861 /* Debug */,
+				1F8A8EA81EB18F9E00053861 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F8A8EB31EB18FFA00053861 /* Build configuration list for PBXNativeTarget "delaunay-for-ai" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F8A8EB41EB18FFA00053861 /* Debug */,
+				1F8A8EB51EB18FFA00053861 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1F8A8EA31EB18F9E00053861 /* Project object */;
+}
