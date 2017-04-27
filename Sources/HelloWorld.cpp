@@ -1,4 +1,5 @@
 #include "IllustratorSDK.h"
+#include "DelaunaySuites.hpp"
 
 // Tell Xcode to export the following symbols
 #if defined(__GNUC__)
@@ -13,60 +14,103 @@ extern "C" ASAPI ASErr PluginMain(char * caller, char* selector, void* message);
 #pragma GCC visibility pop
 #endif
 
-#define kDelaunayToolIconLightResourceID		16649
-#define kDelaunayToolIconDarkResourceID         16650
-#define kDelaunayTool                           "Delaunay Triangulation Tool"
+
+// Should go in the H file
+#define RETURN_ERROR(CALL) error = CALL; \
+if (error) return error;
+
+#define kDelaunayToolIconLightResourceID	16649
+#define kDelaunayToolIconDarkResourceID     16650
+#define kDelaunayTool                       "Delaunay Triangulation Tool"
 
 
 // Declaration
 AIErr AddTool(void* message);
+ASErr acquireSuites(ImportSuite *suites);
+ASErr acquireSuite(ImportSuite *suite);
+ASErr releaseSuites(ImportSuite *suites);
+ASErr releaseSuite(ImportSuite *suite);
 
 extern "C"
 {
-    AIUnicodeStringSuite* sAIUnicodeString = NULL;
-    SPBlocksSuite* sSPBlocks = NULL;
-    AIToolSuite* sAITool = NULL;
     AIToolHandle* fToolHandle = NULL;
+    SPBasicSuite* sSPBasic = NULL;
+    AIErr error = NULL;
 }
 
 extern "C" ASAPI ASErr PluginMain(char* caller, char* selector, void* message)
 {
     ASErr error = kNoErr;
-    SPBasicSuite* sSPBasic = ((SPMessageData*)message)->basic;
+    sSPBasic = ((SPMessageData*)message)->basic;
+    
+    
     if (sSPBasic->IsEqual(caller, kSPInterfaceCaller)) {
-        AIUserSuite *sAIUser = NULL;
-        error = sSPBasic->AcquireSuite(kAIUserSuite, kAIUserSuiteVersion, (const
-                                                                           void**) &sAIUser);
-        error = sSPBasic->AcquireSuite(kAIUnicodeStringSuite,
-                                       kAIUnicodeStringSuiteVersion, (const void**) &sAIUnicodeString);
-        error = sSPBasic->AcquireSuite(kSPBlocksSuite, kSPBlocksSuiteVersion, (const
-                                                                               void**) &sSPBlocks);
+
         if(sSPBasic->IsEqual(selector, kSPInterfaceStartupSelector)){
+            // Register all Suites
+            RETURN_ERROR(acquireSuites(gImportSuites));
+            
             sAIUser->MessageAlert(ai::UnicodeString("Hello World!"));
             
             
             error = AddTool(message);
         }
         else if(sSPBasic->IsEqual(selector, kSPInterfaceShutdownSelector)){
-//            sAIUser->MessageAlert(ai::UnicodeString("Goodbye World!"));
+            sAIUser->MessageAlert(ai::UnicodeString("Goodbye World!"));
+            
+            // Unregister all Suites
+            RETURN_ERROR(releaseSuites(gImportSuites));
+            
         }
-        error = sSPBasic->ReleaseSuite(kAIUserSuite, kAIUserSuiteVersion);
-        error = sSPBasic->ReleaseSuite(kAIUnicodeStringSuite,
-                                       kAIUnicodeStringSuiteVersion);
+
     }
     return error;
 }
 
-//static ASErr StartupPlugin(SPInterfaceMessage* message)
-//{
-//    ASErr error = kNoErr;
-////    error = Plugin::StartupPlugin(message);
-//    
-//    if (!error) {
-//        error = AddTool(message);
-//    }
-//    return error;
-//}
+
+ASErr acquireSuites(ImportSuite *suites) {
+    for (int i = 0; suites[i].name != NULL; i++) {
+        RETURN_ERROR(acquireSuite(&suites[i]));
+    }
+    return kNoErr;
+}
+
+ASErr releaseSuites(ImportSuite *suites) {
+    for (int i = 0; suites[i].name != NULL; i++) {
+        RETURN_ERROR(releaseSuite(&suites[i]));
+    }
+    return kNoErr;
+}
+
+ASErr releaseSuite(ImportSuite *suite) {
+    ASErr error = kNoErr;
+    
+    if (suite->suite != NULL) {
+        void **s = (void **)suite->suite;
+        if (*s != NULL) {
+            error = sSPBasic->ReleaseSuite(suite->name, suite->version);
+            *s = NULL;
+        }
+    }
+    return error;
+}
+
+ASErr acquireSuite(ImportSuite *suite) {
+    ASErr error = kNoErr;
+    char message[256];
+    
+    if (suite->suite != NULL) {
+        error = sSPBasic->AcquireSuite(suite->name, suite->version, (const void **) suite->suite);
+        
+        if (error && sAIUser != NULL) {
+            sprintf(message, "Error: %d, suite: %s, version: %d!", error,
+                    suite->name, suite->version);
+            sAIUser->MessageAlert(ai::UnicodeString(message));
+        }
+    }
+    return error;
+}
+
 
 /* Adds this plug-in's tool to Illustrator.
  */
@@ -74,20 +118,7 @@ AIErr AddTool(void* message)
 {
     AIErr error = kNoErr;
     SPBasicSuite* sSPBasic = ((SPMessageData*)message)->basic;
-    
-    AIUserSuite *sAIUser = NULL;
-    error = sSPBasic->AcquireSuite(kAIUserSuite, kAIUserSuiteVersion, (const
-                                                                       void**) &sAIUser);
-    error = sSPBasic->AcquireSuite(kAIUnicodeStringSuite,
-                                   kAIUnicodeStringSuiteVersion, (const void**) &sAIUnicodeString);
-    error = sSPBasic->AcquireSuite(kSPBlocksSuite, kSPBlocksSuiteVersion, (const
-                                                                           void**) &sSPBlocks);
-    
-    error = sSPBasic->AcquireSuite(kAIToolSuite, kAIToolVersion, (const void**) &sAITool);
 
-    
-    
-    
     AIAddToolData toolData;
     toolData.title = "Delaunay Triangulation Tool";
     toolData.tooltip = "Delaunay Triangulation Tool";
@@ -116,5 +147,5 @@ AIErr AddTool(void* message)
     error = sSPBasic->ReleaseSuite(kAIUnicodeStringSuite,
                                    kAIUnicodeStringSuiteVersion);
     
-    return error;
+    return kNoErr;
 }

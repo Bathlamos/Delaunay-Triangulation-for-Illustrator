@@ -13,6 +13,7 @@
 		1F8A8EBF1EB192A700053861 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A8EBE1EB192A700053861 /* CoreFoundation.framework */; };
 		1F8A8ECC1EB1ABEB00053861 /* png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A8ECA1EB1ABEB00053861 /* png */; };
 		1F8A8ECD1EB1ABEB00053861 /* txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A8ECB1EB1ABEB00053861 /* txt */; };
+		1F8A8ED01EB1B74E00053861 /* DelaunaySuites.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8ECE1EB1B74E00053861 /* DelaunaySuites.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,8 @@
 		1F8A8EBE1EB192A700053861 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		1F8A8ECA1EB1ABEB00053861 /* png */ = {isa = PBXFileReference; lastKnownFileType = folder; name = png; path = Resources/png; sourceTree = "<group>"; };
 		1F8A8ECB1EB1ABEB00053861 /* txt */ = {isa = PBXFileReference; lastKnownFileType = folder; name = txt; path = Resources/txt; sourceTree = "<group>"; };
+		1F8A8ECE1EB1B74E00053861 /* DelaunaySuites.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DelaunaySuites.cpp; path = Sources/DelaunaySuites.cpp; sourceTree = "<group>"; };
+		1F8A8ECF1EB1B74E00053861 /* DelaunaySuites.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DelaunaySuites.hpp; path = Sources/DelaunaySuites.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,8 @@
 			children = (
 				1F8A8EB81EB1905F00053861 /* IAIUnicodeString.cpp */,
 				1F8A8EB61EB1903E00053861 /* HelloWorld.cpp */,
+				1F8A8ECE1EB1B74E00053861 /* DelaunaySuites.cpp */,
+				1F8A8ECF1EB1B74E00053861 /* DelaunaySuites.hpp */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -174,6 +179,7 @@
 			files = (
 				1F8A8EB91EB1905F00053861 /* IAIUnicodeString.cpp in Sources */,
 				1F8A8EB71EB1903E00053861 /* HelloWorld.cpp in Sources */,
+				1F8A8ED01EB1B74E00053861 /* DelaunaySuites.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +350,7 @@
 				1F8A8EB51EB18FFA00053861 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
