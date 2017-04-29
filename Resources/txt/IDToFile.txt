@@ -1,2 +1,3 @@
 16649.png		DelaunayToolLight.png
 16650.png		DelaunayToolDark.png
+16651.png		DelaunayCursor.png

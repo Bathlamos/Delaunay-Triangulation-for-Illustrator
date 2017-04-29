@@ -7,26 +7,42 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1F8A8EB71EB1903E00053861 /* HelloWorld.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EB61EB1903E00053861 /* HelloWorld.cpp */; };
-		1F8A8EB91EB1905F00053861 /* IAIUnicodeString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EB81EB1905F00053861 /* IAIUnicodeString.cpp */; };
-		1F8A8EBC1EB191C900053861 /* HelloWorld.r in Rez */ = {isa = PBXBuildFile; fileRef = 1F8A8EBA1EB1907900053861 /* HelloWorld.r */; };
+		1F8A8EBC1EB191C900053861 /* Delaunay.r in Rez */ = {isa = PBXBuildFile; fileRef = 1F8A8EBA1EB1907900053861 /* Delaunay.r */; };
 		1F8A8EBF1EB192A700053861 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F8A8EBE1EB192A700053861 /* CoreFoundation.framework */; };
 		1F8A8ECC1EB1ABEB00053861 /* png in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A8ECA1EB1ABEB00053861 /* png */; };
 		1F8A8ECD1EB1ABEB00053861 /* txt in Resources */ = {isa = PBXBuildFile; fileRef = 1F8A8ECB1EB1ABEB00053861 /* txt */; };
-		1F8A8ED01EB1B74E00053861 /* DelaunaySuites.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8ECE1EB1B74E00053861 /* DelaunaySuites.cpp */; };
+		1F8A8ED61EB39CE000053861 /* DelaunayToolPlugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8ED21EB39CE000053861 /* DelaunayToolPlugin.cpp */; };
+		1F8A8ED71EB39CE000053861 /* DelaunayToolSuites.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8ED41EB39CE000053861 /* DelaunayToolSuites.cpp */; };
+		1F8A8EE11EB3A11200053861 /* AppContext.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8ED91EB3A11200053861 /* AppContext.cpp */; };
+		1F8A8EE21EB3A11200053861 /* IAIStringFormatUtils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EDA1EB3A11200053861 /* IAIStringFormatUtils.cpp */; };
+		1F8A8EE31EB3A11200053861 /* IAIUnicodeString.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EDB1EB3A11200053861 /* IAIUnicodeString.cpp */; };
+		1F8A8EE41EB3A11200053861 /* IllustratorSDK.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EDC1EB3A11200053861 /* IllustratorSDK.cpp */; };
+		1F8A8EE51EB3A11200053861 /* Main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EDD1EB3A11200053861 /* Main.cpp */; };
+		1F8A8EE61EB3A11200053861 /* Plugin.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EDE1EB3A11200053861 /* Plugin.cpp */; };
+		1F8A8EE71EB3A11200053861 /* SDKAboutPluginsHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EDF1EB3A11200053861 /* SDKAboutPluginsHelper.cpp */; };
+		1F8A8EE81EB3A11200053861 /* Suites.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1F8A8EE01EB3A11200053861 /* Suites.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1F8A8EAF1EB18FFA00053861 /* delaunay-for-ai.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "delaunay-for-ai.bundle"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F8A8EB21EB18FFA00053861 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F8A8EB61EB1903E00053861 /* HelloWorld.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HelloWorld.cpp; path = Sources/HelloWorld.cpp; sourceTree = "<group>"; };
-		1F8A8EB81EB1905F00053861 /* IAIUnicodeString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IAIUnicodeString.cpp; path = ../../illustratorapi/illustrator/IAIUnicodeString.cpp; sourceTree = "<group>"; };
-		1F8A8EBA1EB1907900053861 /* HelloWorld.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = HelloWorld.r; sourceTree = "<group>"; };
+		1F8A8EBA1EB1907900053861 /* Delaunay.r */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.rez; path = Delaunay.r; sourceTree = "<group>"; };
 		1F8A8EBE1EB192A700053861 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		1F8A8ECA1EB1ABEB00053861 /* png */ = {isa = PBXFileReference; lastKnownFileType = folder; name = png; path = Resources/png; sourceTree = "<group>"; };
 		1F8A8ECB1EB1ABEB00053861 /* txt */ = {isa = PBXFileReference; lastKnownFileType = folder; name = txt; path = Resources/txt; sourceTree = "<group>"; };
-		1F8A8ECE1EB1B74E00053861 /* DelaunaySuites.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DelaunaySuites.cpp; path = Sources/DelaunaySuites.cpp; sourceTree = "<group>"; };
-		1F8A8ECF1EB1B74E00053861 /* DelaunaySuites.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = DelaunaySuites.hpp; path = Sources/DelaunaySuites.hpp; sourceTree = "<group>"; };
+		1F8A8ED11EB39CE000053861 /* DelaunayToolID.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelaunayToolID.h; path = Sources/DelaunayToolID.h; sourceTree = "<group>"; };
+		1F8A8ED21EB39CE000053861 /* DelaunayToolPlugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DelaunayToolPlugin.cpp; path = Sources/DelaunayToolPlugin.cpp; sourceTree = "<group>"; };
+		1F8A8ED31EB39CE000053861 /* DelaunayToolPlugin.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelaunayToolPlugin.h; path = Sources/DelaunayToolPlugin.h; sourceTree = "<group>"; };
+		1F8A8ED41EB39CE000053861 /* DelaunayToolSuites.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DelaunayToolSuites.cpp; path = Sources/DelaunayToolSuites.cpp; sourceTree = "<group>"; };
+		1F8A8ED51EB39CE000053861 /* DelaunayToolSuites.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DelaunayToolSuites.h; path = Sources/DelaunayToolSuites.h; sourceTree = "<group>"; };
+		1F8A8ED91EB3A11200053861 /* AppContext.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = AppContext.cpp; path = Sources/Shared/AppContext.cpp; sourceTree = "<group>"; };
+		1F8A8EDA1EB3A11200053861 /* IAIStringFormatUtils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IAIStringFormatUtils.cpp; path = Sources/Shared/IAIStringFormatUtils.cpp; sourceTree = "<group>"; };
+		1F8A8EDB1EB3A11200053861 /* IAIUnicodeString.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IAIUnicodeString.cpp; path = Sources/Shared/IAIUnicodeString.cpp; sourceTree = "<group>"; };
+		1F8A8EDC1EB3A11200053861 /* IllustratorSDK.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = IllustratorSDK.cpp; path = Sources/Shared/IllustratorSDK.cpp; sourceTree = "<group>"; };
+		1F8A8EDD1EB3A11200053861 /* Main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Main.cpp; path = Sources/Shared/Main.cpp; sourceTree = "<group>"; };
+		1F8A8EDE1EB3A11200053861 /* Plugin.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Plugin.cpp; path = Sources/Shared/Plugin.cpp; sourceTree = "<group>"; };
+		1F8A8EDF1EB3A11200053861 /* SDKAboutPluginsHelper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDKAboutPluginsHelper.cpp; path = Sources/Shared/SDKAboutPluginsHelper.cpp; sourceTree = "<group>"; };
+		1F8A8EE01EB3A11200053861 /* Suites.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Suites.cpp; path = Sources/Shared/Suites.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,10 +71,12 @@
 		1F8A8EA91EB18FA500053861 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				1F8A8EB81EB1905F00053861 /* IAIUnicodeString.cpp */,
-				1F8A8EB61EB1903E00053861 /* HelloWorld.cpp */,
-				1F8A8ECE1EB1B74E00053861 /* DelaunaySuites.cpp */,
-				1F8A8ECF1EB1B74E00053861 /* DelaunaySuites.hpp */,
+				1F8A8ED81EB3A05400053861 /* Shared */,
+				1F8A8ED11EB39CE000053861 /* DelaunayToolID.h */,
+				1F8A8ED21EB39CE000053861 /* DelaunayToolPlugin.cpp */,
+				1F8A8ED31EB39CE000053861 /* DelaunayToolPlugin.h */,
+				1F8A8ED41EB39CE000053861 /* DelaunayToolSuites.cpp */,
+				1F8A8ED51EB39CE000053861 /* DelaunayToolSuites.h */,
 			);
 			name = Source;
 			sourceTree = "<group>";
@@ -68,7 +86,7 @@
 			children = (
 				1F8A8ECA1EB1ABEB00053861 /* png */,
 				1F8A8ECB1EB1ABEB00053861 /* txt */,
-				1F8A8EBA1EB1907900053861 /* HelloWorld.r */,
+				1F8A8EBA1EB1907900053861 /* Delaunay.r */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -95,6 +113,21 @@
 				1F8A8EBE1EB192A700053861 /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F8A8ED81EB3A05400053861 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				1F8A8ED91EB3A11200053861 /* AppContext.cpp */,
+				1F8A8EDA1EB3A11200053861 /* IAIStringFormatUtils.cpp */,
+				1F8A8EDB1EB3A11200053861 /* IAIUnicodeString.cpp */,
+				1F8A8EDC1EB3A11200053861 /* IllustratorSDK.cpp */,
+				1F8A8EDD1EB3A11200053861 /* Main.cpp */,
+				1F8A8EDE1EB3A11200053861 /* Plugin.cpp */,
+				1F8A8EDF1EB3A11200053861 /* SDKAboutPluginsHelper.cpp */,
+				1F8A8EE01EB3A11200053861 /* Suites.cpp */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -166,7 +199,7 @@
 			isa = PBXRezBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F8A8EBC1EB191C900053861 /* HelloWorld.r in Rez */,
+				1F8A8EBC1EB191C900053861 /* Delaunay.r in Rez */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,9 +210,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1F8A8EB91EB1905F00053861 /* IAIUnicodeString.cpp in Sources */,
-				1F8A8EB71EB1903E00053861 /* HelloWorld.cpp in Sources */,
-				1F8A8ED01EB1B74E00053861 /* DelaunaySuites.cpp in Sources */,
+				1F8A8EE81EB3A11200053861 /* Suites.cpp in Sources */,
+				1F8A8EE51EB3A11200053861 /* Main.cpp in Sources */,
+				1F8A8ED61EB39CE000053861 /* DelaunayToolPlugin.cpp in Sources */,
+				1F8A8ED71EB39CE000053861 /* DelaunayToolSuites.cpp in Sources */,
+				1F8A8EE41EB3A11200053861 /* IllustratorSDK.cpp in Sources */,
+				1F8A8EE11EB3A11200053861 /* AppContext.cpp in Sources */,
+				1F8A8EE71EB3A11200053861 /* SDKAboutPluginsHelper.cpp in Sources */,
+				1F8A8EE31EB3A11200053861 /* IAIUnicodeString.cpp in Sources */,
+				1F8A8EE61EB3A11200053861 /* Plugin.cpp in Sources */,
+				1F8A8EE21EB3A11200053861 /* IAIStringFormatUtils.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
