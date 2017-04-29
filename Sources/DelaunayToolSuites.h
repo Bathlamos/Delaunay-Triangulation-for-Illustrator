@@ -22,5 +22,6 @@ extern  "C" AIAnnotatorSuite*		sAIAnnotator;
 extern  "C" AIAnnotatorDrawerSuite* sAIAnnotatorDrawer;
 extern  "C" AIDocumentViewSuite*	sAIDocumentView;
 extern	"C" AIStringFormatUtilsSuite*	sAIStringFormatUtils;
+extern  "C" AILayerSuite*       sAILayer;
 
 #endif

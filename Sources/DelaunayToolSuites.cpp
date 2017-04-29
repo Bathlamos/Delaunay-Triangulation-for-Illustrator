@@ -17,6 +17,8 @@ extern "C" {
 	AIAnnotatorDrawerSuite* sAIAnnotatorDrawer = NULL;
 	AIDocumentViewSuite*	sAIDocumentView = NULL;
 	AIStringFormatUtilsSuite*	sAIStringFormatUtils = NULL;
+    AILayerSuite*       sAILayer = NULL;
+
 }
 
 ImportSuite gImportSuites[] = {
@@ -34,5 +36,6 @@ ImportSuite gImportSuites[] = {
 	kAIAnnotatorDrawerSuite, kAIAnnotatorDrawerSuiteVersion, &sAIAnnotatorDrawer,
 	kAIDocumentViewSuite, kAIDocumentViewSuiteVersion, &sAIDocumentView,
 	kAIStringFormatUtilsSuite, kAIStringFormatUtilsSuiteVersion, &sAIStringFormatUtils,
+    kAILayerSuite, kAILayerSuiteVersion, &sAILayer,
 	nil, 0, nil
 };

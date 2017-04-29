@@ -240,8 +240,68 @@ ASErr DelaunayToolPlugin::ToolMouseDown(AIToolMessage* message)
     Delaunay triangulation;
     std::vector<Triangle> triangles = triangulation.triangulate(points);
     
+    AILayerHandle layer;
+    sAILayer->GetLayerByTitle(&layer, ai::UnicodeString("__DELAUNAY__"));
+    if(!layer) {
+//        sAIUser->MessageAlert(ai::UnicodeString("YOLO"));
+        sAILayer->InsertLayer(NULL, kPlaceAboveAll, &layer);
+        sAILayer->SetLayerTitle(layer, ai::UnicodeString("__DELAUNAY__"));
+    }
     
+    sAILayer->SetCurrentLayer(layer);
     
+    for(Triangle const& t: triangles) {
+        AIArtHandle path;
+        AIPathSegment segments[8];
+        AIReal pathAngle, arrowAngle;
+        AIRealPoint arrowPt1, arrowPt2;
+        AIPathStyle pathStyle;
+        AIPathStyleMap pathStyleMap;
+        AIDictionaryRef advStrokeParams = NULL;
+        
+        
+        
+        // Invalidate the old Annotation
+//        error = InvalidateRect(oldAnnotatorRect);
+//        aisdk::check_ai_error(error);
+        
+        // Create new art, we will fill it with points below.
+        RETURN_ERROR(sAIArt->NewArt( kPathArt, kPlaceAboveAll, NULL, &path ));
+        
+        error = sAIPath->SetPathSegmentCount( path, 3 );
+        
+        segments[0].p.h = t.p1.x;
+        segments[0].p.v = t.p1.y;
+        segments[0].in = segments[0].out = segments[0].p;
+        segments[0].corner = true;
+        
+        segments[1].p.h = t.p2.x;
+        segments[1].p.v = t.p2.y;
+        segments[1].in = segments[1].out = segments[1].p;
+        segments[1].corner = true;
+        
+        segments[2].p.h = t.p3.x;
+        segments[2].p.v = t.p3.y;
+        segments[2].in = segments[2].out = segments[2].p;
+        segments[2].corner = true;
+        
+        RETURN_ERROR(sAIPath->SetPathSegments( path, 0, 3, segments ));
+    
+    	RETURN_ERROR(sAIPath->SetPathClosed( path, true ));
+    		
+    	// fill and stroke with black; 1 point line
+    	error = sAIPathStyle->GetCurrentPathStyle( &pathStyle, &pathStyleMap, &advStrokeParams );
+    	pathStyle.fillPaint = true;
+    	pathStyle.fill.color.kind = kGrayColor;
+    	pathStyle.fill.color.c.g.gray = kAIRealOne;
+    	
+    	pathStyle.strokePaint = true;
+    	pathStyle.stroke.color.kind = kGrayColor;
+    	pathStyle.stroke.color.c.g.gray = kAIRealOne;
+    	pathStyle.stroke.width = kAIRealOne;
+    	error = sAIPathStyle->SetPathStyle( path, &pathStyle );
+
+    }
     
 	
 //    sAIUser->MessageAlert(ai::UnicodeString(std::to_string(point.h) + std::to_string(point.v)));
@@ -285,10 +345,10 @@ ASErr DelaunayToolPlugin::ToolMouseDrag(AIToolMessage* message)
 	error = InvalidateRect(oldAnnotatorRect);
 	aisdk::check_ai_error(error);
 	
-	// Create new art, we will fill it with points below.
-	error = sAIArt->NewArt( kPathArt, kPlaceAboveAll, NULL, &path );
-	if ( error )
-		goto error;
+//	// Create new art, we will fill it with points below.
+//	error = sAIArt->NewArt( kPathArt, kPlaceAboveAll, NULL, &path );
+//	if ( error )
+//		goto error;
 		
 //	if (message->event->modifiers & aiEventModifiers_shiftKey)
 //	{
@@ -305,11 +365,11 @@ ASErr DelaunayToolPlugin::ToolMouseDrag(AIToolMessage* message)
 //	}
 //
 //	
-	if ( message->tool == this->fToolHandle ) {
-		//	HEAD ARROW
-		// head arrow has 5 points	
-		error = sAIPath->SetPathSegmentCount( path, 5 );		
-
+//	if ( message->tool == this->fToolHandle ) {
+//		//	HEAD ARROW
+//		// head arrow has 5 points	
+//		error = sAIPath->SetPathSegmentCount( path, 5 );		
+//
 //		// beginning (and end) point. This is butt end of arrow
 //		segments[0].p.h = this->fStartingPoint.h;
 //		segments[0].p.v = this->fStartingPoint.v;
@@ -348,7 +408,7 @@ ASErr DelaunayToolPlugin::ToolMouseDrag(AIToolMessage* message)
 //		if ( error )
 //			goto error;
 //			
-    }
+//    }
 //
 //	error = sAIPath->SetPathClosed( path, true );
 //	if ( error )
@@ -366,7 +426,7 @@ ASErr DelaunayToolPlugin::ToolMouseDrag(AIToolMessage* message)
 //	pathStyle.stroke.width = kAIRealOne;
 //	error = sAIPathStyle->SetPathStyle( path, &pathStyle );
 //
-error:
+//error:
 	return error;
 }
 
