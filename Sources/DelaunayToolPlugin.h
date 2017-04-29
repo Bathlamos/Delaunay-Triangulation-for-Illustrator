@@ -132,7 +132,7 @@ private:
      */
     AIResourceManagerHandle fResourceManagerHandle;
     
-    std::vector<AIPoint> delaunayPoints;
+    std::vector<AIRealPoint> delaunayPoints;
 
 	/**	Adds the tools for this plugin to the application toolbar.
 		@param message IN pointer to plugin and call information.

@@ -2,7 +2,10 @@
 #include "IllustratorSDK.h"
 #include "DelaunayToolPlugin.h"
 #include "SDKErrors.h"
-#include <vector>
+#include "Edge.h"
+#include "Triangle.h"
+#include "Vector2.h"
+#include "Delaunay.h"
 
 
 /*
@@ -225,11 +228,24 @@ ASErr DelaunayToolPlugin::ToolMouseDown(AIToolMessage* message)
 
 	// we want our initial mouse down to base the drag on later	
 	this->fStartingPoint = message->cursor;
+
     
-    AIPoint point;
-    RETURN_ERROR(sAIDocumentView->ArtworkPointToViewPoint(NULL, &message->cursor, &point));
-    delaunayPoints.push_back(point);
+    delaunayPoints.push_back(message->cursor);
+    
+    std::vector<Vec2f> points;
+    for(AIRealPoint const& p: delaunayPoints) {
+        points.push_back(Vec2f(p.h, p.v));
+    }
+    
+    Delaunay triangulation;
+    std::vector<Triangle> triangles = triangulation.triangulate(points);
+    
+    
+    
+    
 	
+//    sAIUser->MessageAlert(ai::UnicodeString(std::to_string(point.h) + std::to_string(point.v)));
+    
 	// Activate annotator.
 	RETURN_ERROR(sAIAnnotator->SetAnnotatorActive(fAnnotatorHandle, true));
 	
@@ -253,27 +269,27 @@ ASErr DelaunayToolPlugin::ToolMouseUp(AIToolMessage* message)
 ASErr DelaunayToolPlugin::ToolMouseDrag(AIToolMessage* message)
 {
 	ASErr error = kNoErr;
-//	AIArtHandle path;
-//	AIPathSegment segments[8];
-//	AIReal pathAngle, arrowAngle;
-//	AIRealPoint arrowPt1, arrowPt2;
-//	AIPathStyle pathStyle;
-//	AIPathStyleMap pathStyleMap;
-//	AIDictionaryRef advStrokeParams = NULL;
-//	
-//	error = sAIUndo->UndoChanges( );
-//
-//	this->fEndPoint = message->cursor;
-//
-//	// Invalidate the old Annotation
-//	error = InvalidateRect(oldAnnotatorRect);
-//	aisdk::check_ai_error(error);
-//	
-//	// Create new art, we will fill it with points below.
-//	error = sAIArt->NewArt( kPathArt, kPlaceAboveAll, NULL, &path );
-//	if ( error )
-//		goto error;
-//		
+	AIArtHandle path;
+	AIPathSegment segments[8];
+	AIReal pathAngle, arrowAngle;
+	AIRealPoint arrowPt1, arrowPt2;
+	AIPathStyle pathStyle;
+	AIPathStyleMap pathStyleMap;
+	AIDictionaryRef advStrokeParams = NULL;
+	
+	error = sAIUndo->UndoChanges( );
+
+	this->fEndPoint = message->cursor;
+
+	// Invalidate the old Annotation
+	error = InvalidateRect(oldAnnotatorRect);
+	aisdk::check_ai_error(error);
+	
+	// Create new art, we will fill it with points below.
+	error = sAIArt->NewArt( kPathArt, kPlaceAboveAll, NULL, &path );
+	if ( error )
+		goto error;
+		
 //	if (message->event->modifiers & aiEventModifiers_shiftKey)
 //	{
 //		short angle = (short)(abs((int)(sAIRealMath->RadianToDegree(sAIRealMath->AIRealPointAngle(&this->fStartingPoint, &this->fEndPoint)))));
@@ -289,11 +305,11 @@ ASErr DelaunayToolPlugin::ToolMouseDrag(AIToolMessage* message)
 //	}
 //
 //	
-//	if ( message->tool == this->fToolHandle ) {
-//		//	HEAD ARROW
-//		// head arrow has 5 points	
-//		error = sAIPath->SetPathSegmentCount( path, 5 );		
-//
+	if ( message->tool == this->fToolHandle ) {
+		//	HEAD ARROW
+		// head arrow has 5 points	
+		error = sAIPath->SetPathSegmentCount( path, 5 );		
+
 //		// beginning (and end) point. This is butt end of arrow
 //		segments[0].p.h = this->fStartingPoint.h;
 //		segments[0].p.v = this->fStartingPoint.v;
@@ -332,7 +348,7 @@ ASErr DelaunayToolPlugin::ToolMouseDrag(AIToolMessage* message)
 //		if ( error )
 //			goto error;
 //			
-//    }
+    }
 //
 //	error = sAIPath->SetPathClosed( path, true );
 //	if ( error )
@@ -350,7 +366,7 @@ ASErr DelaunayToolPlugin::ToolMouseDrag(AIToolMessage* message)
 //	pathStyle.stroke.width = kAIRealOne;
 //	error = sAIPathStyle->SetPathStyle( path, &pathStyle );
 //
-//error:
+error:
 	return error;
 }
 
@@ -387,14 +403,17 @@ ASErr DelaunayToolPlugin::DrawAnnotator(AIAnnotatorMessage* message)
 	try
 	{
         
-        for(AIPoint const& point: delaunayPoints) {
+        for(AIRealPoint const& p: delaunayPoints) {
+            
+            AIPoint point;
+            RETURN_ERROR(sAIDocumentView->ArtworkPointToViewPoint(NULL, &p, &point));
             
             // Define bounding rectangle
             AIRect bbox;
-            bbox.left = point.h + radius;
-            bbox.right = point.h - radius;
-            bbox.top = point.v + radius;
-            bbox.bottom = point.v - radius;
+            bbox.left = point.h - radius;
+            bbox.right = point.h + radius;
+            bbox.top = point.v - radius;
+            bbox.bottom = point.v + radius;
             
             // Define the color
             unsigned short white = 65000;
@@ -408,8 +427,9 @@ ASErr DelaunayToolPlugin::DrawAnnotator(AIAnnotatorMessage* message)
             sAIAnnotatorDrawer->SetColor(message->drawer, whiteFill);
             sAIAnnotatorDrawer->SetLineWidth(message->drawer, 2);
             RETURN_ERROR(sAIAnnotatorDrawer->DrawEllipse(message->drawer, bbox, false));
-            InvalidateRect(bbox);
         }
+        
+        
         
         
 //		// Get the string to display in annotator.
